@@ -1,0 +1,857 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <meta name="author" content="Einsfat">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.7">
+    
+    
+      
+        <title>格式化输出 - Zen Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.19753c6b.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.196e0c26.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#format" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="Zen Docs" class="md-header-nav__button md-logo" aria-label="Zen Docs">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Zen Docs
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              格式化输出
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Zen Docs" class="md-nav__button md-logo" aria-label="Zen Docs">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Zen Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." class="md-nav__link">
+      概述
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        格式化输出
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      格式化输出
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. % 用法
+  </a>
+  
+    <nav class="md-nav" aria-label="1. % 用法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    1.1. 浮点数格式化输出
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    1.2. 字符串格式化输出
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-format" class="md-nav__link">
+    2. format格式化输出
+  </a>
+  
+    <nav class="md-nav" aria-label="2. format格式化输出">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    2.1. 位置匹配
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    2.2. 格式转换
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    2.3. 进阶用法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../Map%E5%AE%9E%E7%8E%B0%E5%B9%B6%E8%A1%8C%E4%BB%BB%E5%8A%A1/" class="md-nav__link">
+      Map 的艺术
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" >
+    <label class="md-nav__link" for="nav-4">
+      并发编程
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="并发编程" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        并发编程
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E5%B9%B6%E5%8F%91%E6%A6%82%E8%BF%B0/" class="md-nav__link">
+      并发概述
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Python%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="md-nav__link">
+      Python多线程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Python%E9%94%81%E6%9C%BA%E5%88%B6/" class="md-nav__link">
+      Python锁机制
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Python%E5%A4%9A%E8%BF%9B%E7%A8%8B/" class="md-nav__link">
+      Python多进程
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" >
+    <label class="md-nav__link" for="nav-5">
+      异步I/O: asyncio
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="异步I/O: asyncio" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon"></span>
+        异步I/O: asyncio
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../asyncio%E4%B8%8A%E7%AF%87/" class="md-nav__link">
+      Asyncio上篇
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../asyncio%E4%B8%AD%E7%AF%87/" class="md-nav__link">
+      Asyncio中篇
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../asyncio%E4%B8%8B%E7%AF%87/" class="md-nav__link">
+      Asyncio下篇
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../%E4%BA%8B%E4%BB%B6%E8%BD%AE%E8%AF%A2/" class="md-nav__link">
+      I/O多路复用
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" >
+    <label class="md-nav__link" for="nav-7">
+      Linux 杂谈
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Linux 杂谈" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon"></span>
+        Linux 杂谈
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../WSL2%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB/" class="md-nav__link">
+      WSL2数据迁移
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" >
+    <label class="md-nav__link" for="nav-8">
+      云哥教你学算法
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="云哥教你学算法" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        <span class="md-nav__icon md-icon"></span>
+        云哥教你学算法
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E5%85%B3%E4%BA%8E%E4%BA%91%E5%93%A5/" class="md-nav__link">
+      关于云哥
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../about/" class="md-nav__link">
+      关于
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. % 用法
+  </a>
+  
+    <nav class="md-nav" aria-label="1. % 用法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    1.1. 浮点数格式化输出
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    1.2. 字符串格式化输出
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-format" class="md-nav__link">
+    2. format格式化输出
+  </a>
+  
+    <nav class="md-nav" aria-label="2. format格式化输出">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    2.1. 位置匹配
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    2.2. 格式转换
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    2.3. 进阶用法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="format">% 和 format 的用法<a class="headerlink" href="#format" title="Permanent link">&para;</a></h1>
+<h2 id="1">1. % 用法<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<h3 id="11">1.1. 浮点数格式化输出<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center">符号</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code>%o</code></td>
+<td align="left">八进制</td>
+</tr>
+<tr>
+<td align="center"><code>%d</code></td>
+<td align="left">十进制</td>
+</tr>
+<tr>
+<td align="center"><code>%x</code></td>
+<td align="left">十六进制</td>
+</tr>
+<tr>
+<td align="center"><code>%f</code></td>
+<td align="left">保留小数点</td>
+</tr>
+<tr>
+<td align="center"><code>%e</code></td>
+<td align="left">保留小数点后面六位有效数字，指数形式输出</td>
+</tr>
+<tr>
+<td align="center"><code>%g</code></td>
+<td align="left">在保证六位有效数字的前提下，使用小数方式，否则使用科学计数法</td>
+</tr>
+</tbody>
+</table>
+<p><strong>示例：</strong>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="mf">1.11</span><span class="p">)</span>         <span class="c1"># 默认保留6为小数</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%.1f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="mf">1.11</span><span class="p">)</span>       <span class="c1"># 保留1位小数</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%e</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="mf">1.11</span><span class="p">)</span>         <span class="c1"># 默认6位小数，用科学计数法</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%.3e</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="mf">1.11</span><span class="p">)</span>       <span class="c1"># 保留3位小数</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%g</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="mf">1111.1111</span><span class="p">)</span>    <span class="c1"># 默认6位有效数字</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%.7g</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="mf">1111.1111</span><span class="p">)</span>  <span class="c1"># 保留7位有效数字</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%.2g</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="mf">1111.1111</span><span class="p">)</span>  <span class="c1"># 保留2位有效数字，自动转换成为科学计数法</span>
+</code></pre></div></p>
+<h3 id="12">1.2. 字符串格式化输出<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center">符号</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code>%s</code></td>
+<td align="left">默认字符串输出格式</td>
+</tr>
+<tr>
+<td align="center"><code>%10s</code></td>
+<td align="left">右对齐、占位符10位</td>
+</tr>
+<tr>
+<td align="center"><code>%-10s</code></td>
+<td align="left">左对齐、占位符10位</td>
+</tr>
+<tr>
+<td align="center"><code>%.2s</code></td>
+<td align="left">截取2位字符串</td>
+</tr>
+<tr>
+<td align="center"><code>%10.2s</code></td>
+<td align="left">10位占位符，截取两位字符串</td>
+</tr>
+</tbody>
+</table>
+<p><strong>示例：</strong>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="s2">&quot;Hi&quot;</span><span class="p">)</span>         <span class="c1"># 默认字符串输出</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%20s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="s2">&quot;Hi&quot;</span><span class="p">)</span>       <span class="c1"># 右对齐，20位占位符，字符串长度不够空格补位</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%-20s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="s2">&quot;Hi&quot;</span><span class="p">)</span>      <span class="c1"># 左对齐，20位占位符，字符串长度不够空格补位</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%.2s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="s2">&quot;Hi&quot;</span><span class="p">)</span>       <span class="c1"># 保留2位</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%10.2s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="s2">&quot;Hi&quot;</span><span class="p">)</span>     <span class="c1"># 右对齐，10位占位符，保留2位字符串</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%-10.2s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="s2">&quot;Hi&quot;</span><span class="p">)</span>    <span class="c1"># 左对齐，10位占位符，保留2位字符串</span>
+</code></pre></div></p>
+<h2 id="2-format">2. format格式化输出<a class="headerlink" href="#2-format" title="Permanent link">&para;</a></h2>
+<p>相对基本的格式化输出采用<code>%</code>的方法，<code>format()</code>函数的功能更加强大，该函数把字符串当成一个模板，通过传入的参数进行格式化，并且使用大括号<code>{}</code>作为特殊的字符代替<code>%</code>。</p>
+<h3 id="21">2.1. 位置匹配<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
+<ul>
+<li>不带编号，即<code>{}</code>，参数的顺序不可以改变</li>
+<li>带数字编号，即<code>{1} {2}</code>，参数的顺序可以改变</li>
+<li>带关键字，即<code>{a} {tom}</code></li>
+</ul>
+<p><strong>示例：</strong>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span><span class="s1">&#39;world&#39;</span><span class="p">))</span>                  <span class="c1"># 不带字段</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{0}</span><span class="s1"> </span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span><span class="s1">&#39;world&#39;</span><span class="p">))</span>                <span class="c1"># 带数字编号</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{0}</span><span class="s1"> </span><span class="si">{1}</span><span class="s1"> </span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span><span class="s1">&#39;world&#39;</span><span class="p">))</span>            <span class="c1"># 打乱顺序</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{a}</span><span class="s1"> </span><span class="si">{tom}</span><span class="s1"> </span><span class="si">{a}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tom</span><span class="o">=</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span><span class="n">a</span><span class="o">=</span><span class="s1">&#39;world&#39;</span><span class="p">))</span>    <span class="c1"># 带关键字</span>
+</code></pre></div></p>
+<h3 id="22">2.2. 格式转换<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center">符号</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code>b</code></td>
+<td align="left">二进制，将数字转换成二进制输出</td>
+</tr>
+<tr>
+<td align="center"><code>c</code></td>
+<td align="left">字符，转换成为Unicode字符串</td>
+</tr>
+<tr>
+<td align="center"><code>d</code></td>
+<td align="left">十进制整数</td>
+</tr>
+<tr>
+<td align="center"><code>o</code></td>
+<td align="left">八进制输出，将数字转换成为八进制输出</td>
+</tr>
+<tr>
+<td align="center"><code>x</code></td>
+<td align="left">十六进制输出</td>
+</tr>
+<tr>
+<td align="center"><code>e</code></td>
+<td align="left">幂符号，用科学计算法打印数字，用<code>e</code>表示幂</td>
+</tr>
+<tr>
+<td align="center"><code>g</code></td>
+<td align="left">一般格式，当数值比较大的时候，采用幂的形式打印</td>
+</tr>
+<tr>
+<td align="center"><code>n</code></td>
+<td align="left">数字，当数值为整数时和<code>d</code>相同，当值为浮点数时和<code>g</code>相同，不同的是它会根据区域设置插入数字分隔符</td>
+</tr>
+<tr>
+<td align="center"><code>%</code></td>
+<td align="left">百分号，将数值乘以100然后使用fixed-point('f')格式打印，值后面会有一个百分号</td>
+</tr>
+</tbody>
+</table>
+<p><strong>示例：</strong>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0:b}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>       <span class="c1"># 11</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:c}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>       <span class="c1"># □</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:%}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>       <span class="c1"># 2000.000000%</span>
+</code></pre></div></p>
+<h3 id="23">2.3. 进阶用法<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
+<p><strong>左对齐、右对齐、居中及位数补全</strong>
+- <code>&lt;</code> （默认）左对齐、<code>&gt;</code> 右对齐、<code>^</code> 中间对齐、<code>=</code> （只用于数字）在小数点后进行补齐
+- 取位数<code>{:4s}</code>、<code>{:.2f}</code>等</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href=".." class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                概述
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../Map%E5%AE%9E%E7%8E%B0%E5%B9%B6%E8%A1%8C%E4%BB%BB%E5%8A%A1/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                Map 的艺术
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.0ac82a11.min.js"></script>
+      <script src="../assets/javascripts/bundle.f81dfb4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../js/extra.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
