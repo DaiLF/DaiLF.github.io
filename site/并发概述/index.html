@@ -58,6 +58,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -222,9 +227,56 @@
     <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        并发概述
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
     <a href="./" class="md-nav__link md-nav__link--active">
       并发概述
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 并发介绍
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 并发介绍">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    1.1 进程和线程
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 并发和并行
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -436,6 +488,54 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 并发介绍
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 并发介绍">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    1.1 进程和线程
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 并发和并行
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
@@ -444,7 +544,17 @@
                 
                   <h1>并发概述</h1>
                 
-                
+                <h2 id="1">1. 并发介绍<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<h3 id="11">1.1 进程和线程<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>进程指的是程序在操作系统中的一次执行过程，系统进行资源的分配和调度的一个独立单位。线程是一个执行实体，是CPU调度和分派任务的基本的单位，它是比进程更小的能独立运行的基本单位。一个进程可以创建和销毁多个线程，同一个进程中的多个线程之间是可以并发执行的。  </p>
+</blockquote>
+<h2 id="2">2. 并发和并行<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>多线程在一个CPU核心上运行就是并发，多线程在多核CPU上运行就是并行。  </p>
+</blockquote>
+<p>并发操作依赖于系统对任务的调度，多个任务之间调度的交出所占用的时间片，交替运行；并行则是将多个任务分配到CPU的多个核心上，同时运行。</p>
+<p><center><img src="./img/v2-674f0d37fca4fac1bd2df28a2b78e633_r.jpg"></center></p>
                 
               
               
