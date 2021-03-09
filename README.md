@@ -1,3 +1,3 @@
 ![](index.png)
 
-<center><a href="https://www.baidu.com">进入</a><center>
+<center><a href="https://dailf.github.io/site/">进入Zen Docs</a><center>
