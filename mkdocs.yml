@@ -1,0 +1,66 @@
+site_name: Zen Docs
+site_author: Einsfat
+
+theme: 
+  name: material
+  language: "zh"
+
+
+nav:
+  - "概述": "index.md"
+  - "格式化输出": "格式化输出.md"
+  - "Map 的艺术": "Map实现并行任务.md"
+  - "并发编程":
+    - "并发概述.md"
+    - "Python多线程.md"
+    - "Python锁机制.md"
+    - "Python多进程.md"
+  - "异步I/O: asyncio":
+    - "asyncio上篇.md"
+    - "asyncio中篇.md"
+    - "asyncio下篇.md"
+  - "I/O多路复用": "事件轮询.md"
+  - "Linux 杂谈":
+    - "WSL2数据迁移.md"
+  - "云哥教你学算法":
+    - "关于云哥.md"
+  - "关于": "about.md"
+
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+      linenums: false
+  - toc:
+      permalink: true
+  - footnotes
+  - meta
+  - def_list
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      # emoji_generator: !!python/name:pymdownx.emoji.to_png
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+      #emoji_generator: !!python/name:pymdownx.emoji.to_png_sprite
+      #emoji_generator: !!python/name:pymdownx.emoji.to_svg_sprite
+      #emoji_generator: !!python/name:pymdownx.emoji.to_awesome
+      #emoji_generator: !!python/name:pymdownx.emoji.to_alt
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist
+  - pymdownx.tilde
+
+extra:
+  search:
+    language: 'jp'
+
+extra_javascript:
+  - 'js/extra.js'
+  - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
