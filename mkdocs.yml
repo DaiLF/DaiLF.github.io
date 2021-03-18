@@ -24,6 +24,7 @@ nav:
     - "WSL2数据迁移.md"
   - "云哥教你学算法":
     - "关于云哥.md"
+    - "链表.md"
   - "关于": "about.md"
 
 markdown_extensions:
