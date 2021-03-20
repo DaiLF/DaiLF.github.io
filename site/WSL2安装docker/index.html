@@ -16,7 +16,7 @@
     
     
       
-        <title>关于 - Zen Docs</title>
+        <title>WSL2 安装 docker 的两种方式 - Zen Docs</title>
       
     
     
@@ -58,6 +58,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#wsl2-docker" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -84,7 +89,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              关于
+              WSL2 安装 docker 的两种方式
             
           </span>
         </div>
@@ -338,10 +343,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" >
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
     <label class="md-nav__link" for="nav-7">
       Linux 杂谈
       <span class="md-nav__icon md-icon"></span>
@@ -370,11 +377,90 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../WSL2%E5%AE%89%E8%A3%85docker/" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        WSL2 安装 docker 的两种方式
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
       WSL2 安装 docker 的两种方式
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 前言
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-wsl2" class="md-nav__link">
+    2. 开启 WSL2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-docker" class="md-nav__link">
+    3. 安装docker的两种方式
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 安装docker的两种方式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-linuxdocker" class="md-nav__link">
+    3.1 原生Linux安装docker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-dcoker-desktop-for-windows" class="md-nav__link">
+    3.2 Dcoker Desktop for Windows 的方式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4. 总结
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -436,18 +522,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-    <a href="./" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../about/" class="md-nav__link">
       关于
     </a>
-    
   </li>
 
     
@@ -458,15 +537,118 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 前言
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-wsl2" class="md-nav__link">
+    2. 开启 WSL2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-docker" class="md-nav__link">
+    3. 安装docker的两种方式
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 安装docker的两种方式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-linuxdocker" class="md-nav__link">
+    3.1 原生Linux安装docker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-dcoker-desktop-for-windows" class="md-nav__link">
+    3.2 Dcoker Desktop for Windows 的方式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4. 总结
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
                 
-                  <h1>关于</h1>
-                
-                
+                <h1 id="wsl2-docker">WSL2 安装 docker 的两种方式<a class="headerlink" href="#wsl2-docker" title="Permanent link">&para;</a></h1>
+<p><img alt="" src="../img/v2-f851bafbf9461153d1d8e4e01f72fe92_1440w.jpg" /></p>
+<h2 id="1">1. 前言<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<p>Windows10 已经推出了 <code>WSL2</code>，相比于 <code>WSL</code> 采用的 <code>API</code> 转换的方式，<code>WSL2</code> 则完全不同，Windows10 开始内置了一个轻量级的虚拟机，记过为软件的不断优化，这个虚拟机已经和 Windows10 高度集成，实现了虚拟机的高性能运行，<code>WSL2</code> 便是运行在虚拟机上的一个完整的 Linux 内核，因此 <code>WSL2</code> 的使用体验更加贴近原生 Linux，同时 <code>WSL2</code> 开启速度有了明显的提升。</p>
+<h2 id="2-wsl2">2. 开启 WSL2<a class="headerlink" href="#2-wsl2" title="Permanent link">&para;</a></h2>
+<p>🤪 自行百度...
+<div class="highlight"><pre><span></span><code>// 查看wsl版本
+wsl -l -v
+</code></pre></div></p>
+<h2 id="3-docker">3. 安装docker的两种方式<a class="headerlink" href="#3-docker" title="Permanent link">&para;</a></h2>
+<h3 id="31-linuxdocker">3.1 原生Linux安装docker<a class="headerlink" href="#31-linuxdocker" title="Permanent link">&para;</a></h3>
+<p><code>WSL2</code> 已经完整使用了 Linux 内核，该种安装方式和在 Linux 虚拟机上安装 docker 相似，步骤如下：</p>
+<p><div class="highlight"><pre><span></span><code>curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+sudo service docker start
+</code></pre></div>
+执行上面的脚本的过程中，，脚本提示 <strong>“建议使用Docker Desktop for windows”</strong>，20s内按  <code>Ctrl+C</code> 会退出安装，所以需要等待 20s，另外此种方式需要访问外网。
+检查 docker 是否正常安装：</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 检查 docker 进程是否启动</span>
+service docker status
+ps aux <span class="p">|</span> grep docker
+<span class="c1"># 检查拉取镜像功能是否正常</span>
+docker pull busybox
+docker images
+</code></pre></div>
+<p><strong>💩 注意：</strong> 不同于完全 Linux 虚拟机方式，<code>WLS2</code> 下通过 <code>apt install docker-ce</code> 命令安装的 docker 无法启动，因为 <code>WSL2</code> 方式的 ubuntu 里面没有 <code>systemd</code>。上述官方<code>get-docker.sh</code> 安装的 docker，<code>dockerd</code> 进程是用 ubuntu 传统的 <code>init</code> 方式而非 <code>systemd</code> 启动的。</p>
+<h3 id="32-dcoker-desktop-for-windows">3.2 Dcoker Desktop for Windows 的方式<a class="headerlink" href="#32-dcoker-desktop-for-windows" title="Permanent link">&para;</a></h3>
+<p>Docker 也专门开发了可以使用 <code>WSL2</code> 中的 Docker 守护进程的桌面管理程序, 打开 Docker Desktop WSL2 backend 页面，下载最新的 Docker Desktop for Windows 程序 ，建议下载stable 版本。下载地址：<a href="https://www.docker.com/products/docker-desktop">https://www.docker.com/products/docker-desktop</a>
+<img alt="" src="../img/c834004e3c583529169677f6b0f9fbc8.png" />
+<img alt="" src="../img/5ccc46d43b6cbd5bb01e798983b19913.png" /></p>
+<h2 id="4">4. 总结<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>WSL2</code> 下原生 Linux 安装 docker 方式和完全 Linux 虚拟机安装 docker 类似，区别在于 <code>WSL2</code> 下的 Linux 不支持 <code>systemd</code> (垃圾微软，小声BB)。</li>
+<li>Docker Desktop for windows 方式，其实质是利用 docker 的 <code>C/S</code> 架构，将 Windows 模式下的 docker 对应 <code>docker.sock</code>，docker 客户端二进制和 docker 的数据目录挂载到 <code>WSL2</code> 里面的 Linux 机器，在此 Linux 机器下执行 docker 命令(docker 命令为 docker 客户端)，实质为客户端通过挂载的 <code>/var/run/docker.sock</code> 文件与 Windows 里面的 <code>dockerd</code> 服务端进程通信。</li>
+</ul>
                 
               
               
@@ -485,7 +667,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../%E9%93%BE%E8%A1%A8/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../WSL2%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -494,11 +676,25 @@
                 <span class="md-footer-nav__direction">
                   上一页
                 </span>
-                链表
+                WSL2数据迁移
               </div>
             </div>
           </a>
         
+        
+          <a href="../%E5%85%B3%E4%BA%8E%E4%BA%91%E5%93%A5/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                关于云哥
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
         
       </nav>
     </div>
