@@ -16,7 +16,7 @@
     
     
       
-        <title>I/O多路复用 - Zen Docs</title>
+        <title>Linux 系统启动过程 - Zen Docs</title>
       
     
     
@@ -58,6 +58,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#linux" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -84,7 +89,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              I/O多路复用
+              Linux 系统启动过程
             
           </span>
         </div>
@@ -326,18 +331,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-    <a href="./" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../%E4%BA%8B%E4%BB%B6%E8%BD%AE%E8%AF%A2/" class="md-nav__link">
       I/O多路复用
     </a>
-    
   </li>
 
     
@@ -345,10 +343,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" >
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
     <label class="md-nav__link" for="nav-7">
       Linux 杂谈
       <span class="md-nav__icon md-icon"></span>
@@ -389,11 +389,84 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../Linux%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B/" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Linux 系统启动过程
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
       Linux 系统启动过程
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 内核引导
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-init" class="md-nav__link">
+    2. 运行 init
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 运行级别
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4. 系统初始化
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5. 建立终端
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6. 用户登录系统
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -470,15 +543,128 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 内核引导
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-init" class="md-nav__link">
+    2. 运行 init
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 运行级别
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4. 系统初始化
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5. 建立终端
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6. 用户登录系统
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
                 
-                  <h1>I/O多路复用</h1>
-                
-                
+                <h1 id="linux">Linux 系统启动过程<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h1>
+<p>很多时候我们启动Linux系统的时候，屏幕显示大量启动信息，给人一种很复杂的样子。实际上Linux的启动过程并不是想象中的那么复杂，Linux启动过程可以分为 5 个阶段：
+- 内核的引导
+- 运行 <code>init</code>
+- 系统初始化
+- 建立终端
+- 用户登录系统</p>
+<blockquote>
+<p><code>init</code> 程序的类型：
+<code>SysV</code>: init, Cent5 之前，配置文件： <code>/etc/inittab</code>
+<code>Upstart</code>: init, Cent6, 配置文件：<code>/etc/inittab, /etc/init/*.conf</code>
+<code>Systemd</code>: systemd, Cent7, 配置文件： <code>/usr/lib/systemd/system, /etc/systemd/system</code></p>
+</blockquote>
+<h2 id="1">1. 内核引导<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<p>当计算打开电源后，首先的时 <code>BIOS</code> 开机自检，按照 <code>BIOS</code> 中设置的启动设备（通常是硬盘）来启动，操作系统接管硬件之后，首先读入 <code>/boot</code> 目录下面的内核文件。</p>
+<p><img alt="" src="../img/bg2013081702.png" /></p>
+<h2 id="2-init">2. 运行 init<a class="headerlink" href="#2-init" title="Permanent link">&para;</a></h2>
+<p><code>init</code> 进程是系统所有进程的起点，没有这个进程，系统中的任何进程都不会被启动，<code>init</code> 程序首先需要读取配置文件 <code>/etc/inittab</code></p>
+<p><img alt="" src="../img/bg2013081703.png" /></p>
+<h2 id="3">3. 运行级别<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<p>显示情况下很多程序需要开机启动，在 Windows 系统中称为**服务**(service)，在 Linux 系统中称之为**守护进程**(daemon)。
+其中，<code>init</code> 的一大任务就是去运行这些开机启动的程序，但是不同的场景下需要启动不同的程序，比如作为 web 服务器时，需要启动 Nginx ，用作桌面程序时，则不需要这些程序。
+Linux 系统允许为不同的场合，分配不同的开机启动程序，这就叫做**运行级别**(runlevel)，也就是说，Linux 系统开机时根据**运行级别**，确定需要运行那些程序。</p>
+<p><img alt="" src="../img/bg2013081704.png" /></p>
+<p>Linux 系统有 7 个运行级别：
+- 运行级别0：系统停机状态，系统默认运行级别不能设为0，否则不能正常启动
+- 运行级别1：单用户工作状态，root权限，用于系统维护，禁止远程登陆
+- 运行级别2：多用户状态(没有NFS)
+- 运行级别3：完全的多用户状态(有NFS)，登陆后进入控制台命令行模式
+- 运行级别4：系统未使用，保留
+- 运行级别5：X11控制台，登陆后进入图形GUI模式
+- 运行级别6：系统正常关闭并重启，默认运行级别不能设为6，否则不能正常启动</p>
+<h2 id="4">4. 系统初始化<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<p>在 <code>init</code> 的配置文件中：<code>si::sysinit:/etc/rc.d/rc.sysinit</code> 调用执行了 <code>/etc/rc.d/rc.sysinit</code> 而 <code>rc.sysinit</code> 是个 bash shell 的脚本，主要负责完成一些系统初始化的工作，<code>rc.sysinit</code> 是每一个运行级别都要首先运行的一个重要脚本。</p>
+<p><img alt="" src="../img/bg2013081705.png" /></p>
+<h2 id="5">5. 建立终端<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<p><code>rc</code> 执行完毕后，返回 <code>init</code>。这时基本系统环境已经设置好了，各种守护进程也已经启动了。
+<code>init</code> 接下来会打开 6 个终端，以便用户登录系统。在 <code>inittab</code> 中的以下 6 行就是定义了 6 个终端：</p>
+<div class="highlight"><pre><span></span><code>1:2345:respawn:/sbin/mingetty tty1
+2:2345:respawn:/sbin/mingetty tty2
+3:2345:respawn:/sbin/mingetty tty3
+4:2345:respawn:/sbin/mingetty tty4
+5:2345:respawn:/sbin/mingetty tty5
+6:2345:respawn:/sbin/mingetty tty6
+</code></pre></div>
+<h2 id="6">6. 用户登录系统<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<p>一般来说，用户的登录方式有三种：
+- 命令行登录
+- ssh 登录
+- 图形界面登录</p>
+<p><img alt="" src="../img/bg2013081706.png" /></p>
                 
               
               
@@ -497,7 +683,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../asyncio%E4%B8%8B%E7%AF%87/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../WSL2%E5%AE%89%E8%A3%85docker/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -506,19 +692,19 @@
                 <span class="md-footer-nav__direction">
                   上一页
                 </span>
-                Asyncio下篇
+                WSL2 安装 docker 的两种方式
               </div>
             </div>
           </a>
         
         
-          <a href="../WSL2%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../%E5%85%B3%E4%BA%8E%E4%BA%91%E5%93%A5/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   下一页
                 </span>
-                WSL2数据迁移
+                关于云哥
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
