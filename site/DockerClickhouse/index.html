@@ -1,0 +1,1269 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="Einsfat">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.3">
+    
+    
+      
+        <title>DockerClickhouse - Zen Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.e35208c4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dcokerclickhouse" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Zen Docs" class="md-header__button md-logo" aria-label="Zen Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Zen Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              DockerClickhouse
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Zen Docs" class="md-nav__button md-logo" aria-label="Zen Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Zen Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        概述
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA/" class="md-nav__link">
+        格式化输出
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Map%E5%AE%9E%E7%8E%B0%E5%B9%B6%E8%A1%8C%E4%BB%BB%E5%8A%A1/" class="md-nav__link">
+        Map 的艺术
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        并发编程
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="并发编程" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          并发编程
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%B9%B6%E5%8F%91%E6%A6%82%E8%BF%B0/" class="md-nav__link">
+        并发概述
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Python%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="md-nav__link">
+        多线程
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Python%E9%94%81%E6%9C%BA%E5%88%B6/" class="md-nav__link">
+        线程中的锁机制
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Python%E5%A4%9A%E8%BF%9B%E7%A8%8B/" class="md-nav__link">
+        Python多进程
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        异步I/O: asyncio
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="异步I/O: asyncio" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          异步I/O: asyncio
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../asyncio%E4%B8%8A%E7%AF%87/" class="md-nav__link">
+        Asyncio上篇
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../asyncio%E4%B8%AD%E7%AF%87/" class="md-nav__link">
+        Asyncio中篇
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../asyncio%E4%B8%8B%E7%AF%87/" class="md-nav__link">
+        Asyncio下篇
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E4%BA%8B%E4%BB%B6%E8%BD%AE%E8%AF%A2/" class="md-nav__link">
+        I/O多路复用
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        Linux 杂谈
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Linux 杂谈" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Linux 杂谈
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WSL2%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB/" class="md-nav__link">
+        WSL2数据迁移
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WSL2%E5%AE%89%E8%A3%85docker/" class="md-nav__link">
+        WSL2 安装 docker 的两种方式
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Linux%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B/" class="md-nav__link">
+        Linux 系统启动过程
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" checked>
+      
+      <label class="md-nav__link" for="__nav_8">
+        Docker容器化
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Docker容器化" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Docker容器化
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          DockerClickhouse
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        DockerClickhouse
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dcokerclickhouse" class="md-nav__link">
+    Dcoker安装Clickhouse
+  </a>
+  
+    <nav class="md-nav" aria-label="Dcoker安装Clickhouse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-docker" class="md-nav__link">
+    1. 安装 Docker
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 安装 Docker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    1.1 使用官方安装脚本自动安装
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    1.2 手动安装
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2 手动安装">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121" class="md-nav__link">
+    1.2.1 先卸载旧版本（初次安装可以跳过）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122-docker" class="md-nav__link">
+    1.2.2 使用 Docker 仓库进行安装
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2.2 使用 Docker 仓库进行安装">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1221" class="md-nav__link">
+    1.2.2.1 安装依赖
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1222" class="md-nav__link">
+    1.2.2.2 设置仓库
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1223-docker-engine-community" class="md-nav__link">
+    1.2.2.3 安装 Docker Engine-Community
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-docker" class="md-nav__link">
+    1.3 卸载 Docker
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-clickhouse" class="md-nav__link">
+    2. 安装 Clickhouse
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 安装 Clickhouse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-docker-clickhouse" class="md-nav__link">
+    2.1 创建 Docker Clickhouse 挂载卷目录
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-clickhouse-docker" class="md-nav__link">
+    2.2 拉取 Clickhouse 的 Docker 镜像
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-clickhouse" class="md-nav__link">
+    2.3 创建临时 Clickhouse 容器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-clickhouse" class="md-nav__link">
+    2.4 创建 Clickhouse 容器
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 连接测试
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 连接测试">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    3.1 安装驱动
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    3.2 连接测试
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      <label class="md-nav__link" for="__nav_9">
+        设计模式
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="设计模式" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          设计模式
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" class="md-nav__link">
+        单例模式
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      <label class="md-nav__link" for="__nav_10">
+        云哥教你学算法
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="云哥教你学算法" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          云哥教你学算法
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%85%B3%E4%BA%8E%E4%BA%91%E5%93%A5/" class="md-nav__link">
+        关于云哥
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E9%93%BE%E8%A1%A8/" class="md-nav__link">
+        链表
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        关于
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dcokerclickhouse" class="md-nav__link">
+    Dcoker安装Clickhouse
+  </a>
+  
+    <nav class="md-nav" aria-label="Dcoker安装Clickhouse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-docker" class="md-nav__link">
+    1. 安装 Docker
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 安装 Docker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    1.1 使用官方安装脚本自动安装
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    1.2 手动安装
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2 手动安装">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121" class="md-nav__link">
+    1.2.1 先卸载旧版本（初次安装可以跳过）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122-docker" class="md-nav__link">
+    1.2.2 使用 Docker 仓库进行安装
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2.2 使用 Docker 仓库进行安装">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1221" class="md-nav__link">
+    1.2.2.1 安装依赖
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1222" class="md-nav__link">
+    1.2.2.2 设置仓库
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1223-docker-engine-community" class="md-nav__link">
+    1.2.2.3 安装 Docker Engine-Community
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-docker" class="md-nav__link">
+    1.3 卸载 Docker
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-clickhouse" class="md-nav__link">
+    2. 安装 Clickhouse
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 安装 Clickhouse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-docker-clickhouse" class="md-nav__link">
+    2.1 创建 Docker Clickhouse 挂载卷目录
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-clickhouse-docker" class="md-nav__link">
+    2.2 拉取 Clickhouse 的 Docker 镜像
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-clickhouse" class="md-nav__link">
+    2.3 创建临时 Clickhouse 容器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-clickhouse" class="md-nav__link">
+    2.4 创建 Clickhouse 容器
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 连接测试
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 连接测试">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    3.1 安装驱动
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    3.2 连接测试
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>DockerClickhouse</h1>
+                
+                <h2 id="dcokerclickhouse">Dcoker安装Clickhouse<a class="headerlink" href="#dcokerclickhouse" title="Permanent link">&para;</a></h2>
+<div class="toc">
+<ul>
+<li><a href="#dcokerclickhouse">Dcoker安装Clickhouse</a><ul>
+<li><a href="#1-docker">1. 安装 Docker</a><ul>
+<li><a href="#11">1.1 使用官方安装脚本自动安装</a></li>
+<li><a href="#12">1.2 手动安装</a><ul>
+<li><a href="#121">1.2.1 先卸载旧版本（初次安装可以跳过）</a></li>
+<li><a href="#122-docker">1.2.2 使用 Docker 仓库进行安装</a><ul>
+<li><a href="#1221">1.2.2.1 安装依赖</a></li>
+<li><a href="#1222">1.2.2.2 设置仓库</a></li>
+<li><a href="#1223-docker-engine-community">1.2.2.3 安装 Docker Engine-Community</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#13-docker">1.3 卸载 Docker</a></li>
+</ul>
+</li>
+<li><a href="#2-clickhouse">2. 安装 Clickhouse</a><ul>
+<li><a href="#21-docker-clickhouse">2.1 创建 Docker Clickhouse 挂载卷目录</a></li>
+<li><a href="#22-clickhouse-docker">2.2 拉取 Clickhouse 的 Docker 镜像</a></li>
+<li><a href="#23-clickhouse">2.3 创建临时 Clickhouse 容器</a></li>
+<li><a href="#24-clickhouse">2.4 创建 Clickhouse 容器</a></li>
+</ul>
+</li>
+<li><a href="#3">3. 连接测试</a><ul>
+<li><a href="#31">3.1 安装驱动</a></li>
+<li><a href="#32">3.2 连接测试</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="1-docker">1. 安装 Docker<a class="headerlink" href="#1-docker" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>该教程指针对 CentOS，其它 Linux 发行版安装方法大同小异，百度即可。</p>
+</blockquote>
+<p>⚡Docker 支持以下的 64 位 CentOS 版本：</p>
+<ul>
+<li>CentOS 7</li>
+<li>CentOS 8</li>
+<li>更高版本...</li>
+</ul>
+<h4 id="11">1.1 使用官方安装脚本自动安装<a class="headerlink" href="#11" title="Permanent link">&para;</a></h4>
+<p>安装命令如下：</p>
+<div class="highlight"><pre><span></span><code>curl -fsSL https://get.docker.com <span class="p">|</span> bash -s docker --mirror Aliyun
+</code></pre></div>
+<p>也可以使用国内 daocloud 一键安装命令：</p>
+<div class="highlight"><pre><span></span><code>curl -sSL https://get.daocloud.io/docker <span class="p">|</span> sh
+</code></pre></div>
+<h4 id="12">1.2 手动安装<a class="headerlink" href="#12" title="Permanent link">&para;</a></h4>
+<h5 id="121">1.2.1 先卸载旧版本（初次安装可以跳过）<a class="headerlink" href="#121" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code>sudo yum remove docker <span class="se">\</span>
+                docker-client <span class="se">\</span>
+                docker-client-latest <span class="se">\</span>
+                docker-common <span class="se">\</span>
+                docker-latest <span class="se">\</span>
+                docker-latest-logrotate <span class="se">\</span>
+                docker-logrotate <span class="se">\</span>
+                docker-engine
+</code></pre></div>
+<h5 id="122-docker">1.2.2 使用 Docker 仓库进行安装<a class="headerlink" href="#122-docker" title="Permanent link">&para;</a></h5>
+<p>在新主机上首次安装 Docker Engine-Community 之前，需要设置 Docker 仓库。之后，您可以从仓库安装和更新 Docker。</p>
+<h6 id="1221">1.2.2.1 安装依赖<a class="headerlink" href="#1221" title="Permanent link">&para;</a></h6>
+<p>安装所需的软件包。yum-utils 提供了 yum-config-manager ，并且 device mapper 存储驱动程序需要 device-mapper-persistent-data 和 lvm2。</p>
+<div class="highlight"><pre><span></span><code>sudo yum install -y yum-utils <span class="se">\</span>
+                    device-mapper-persistent-data <span class="se">\</span>
+                    lvm2
+</code></pre></div>
+<h6 id="1222">1.2.2.2 设置仓库<a class="headerlink" href="#1222" title="Permanent link">&para;</a></h6>
+<p><strong>阿里云</strong></p>
+<div class="highlight"><pre><span></span><code>sudo yum-config-manager --add-repo 
+<span class="se">\ </span>http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+</code></pre></div>
+<p><strong>清华大学</strong></p>
+<div class="highlight"><pre><span></span><code>sudo yum-config-manager --add-repo 
+<span class="se">\ </span>https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/centos/docker-ce.repo
+</code></pre></div>
+<h6 id="1223-docker-engine-community">1.2.2.3 安装 Docker Engine-Community<a class="headerlink" href="#1223-docker-engine-community" title="Permanent link">&para;</a></h6>
+<p>安装最新版本的 Docker Engine-Community 和 containerd，或者安装指定版本（自行百度）。</p>
+<div class="highlight"><pre><span></span><code>sudo yum install docker-ce docker-ce-cli containerd.io
+</code></pre></div>
+<h4 id="13-docker">1.3 卸载 Docker<a class="headerlink" href="#13-docker" title="Permanent link">&para;</a></h4>
+<p>删除安装包：</p>
+<div class="highlight"><pre><span></span><code>yum remove docker-ce
+</code></pre></div>
+<p>删除镜像、容器、配置文件等内容：</p>
+<div class="highlight"><pre><span></span><code>rm -rf /var/lib/docker
+</code></pre></div>
+<h3 id="2-clickhouse">2. 安装 Clickhouse<a class="headerlink" href="#2-clickhouse" title="Permanent link">&para;</a></h3>
+<h4 id="21-docker-clickhouse">2.1 创建 Docker Clickhouse 挂载卷目录<a class="headerlink" href="#21-docker-clickhouse" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>创建挂载卷的目的是为了方便对 clickhouse 的配置文件修改，以及 clickhouse 数据、日志文件的保存等，关于 docker 挂载卷的具体详情，请自行百度。</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>mkdir -p /opt/ck/data
+mkdir -p /opt/ck/conf
+mkdir -p /opt/ck/log
+
+chmod -R <span class="m">777</span> /opt/ck/data
+chmod -R <span class="m">777</span> /opt/ck/conf
+chmod -R <span class="m">777</span> /opt/ck/log
+</code></pre></div>
+<h4 id="22-clickhouse-docker">2.2 拉取 Clickhouse 的 Docker 镜像<a class="headerlink" href="#22-clickhouse-docker" title="Permanent link">&para;</a></h4>
+<p>默认拉取最新镜像，也可以拉去指定版本。</p>
+<div class="highlight"><pre><span></span><code>docker pull yandex/clickhouse-server
+docker pull yandex/clickhouse-clinet
+</code></pre></div>
+<h4 id="23-clickhouse">2.3 创建临时 Clickhouse 容器<a class="headerlink" href="#23-clickhouse" title="Permanent link">&para;</a></h4>
+<p>目的是为了将配置文件复制到宿主机</p>
+<div class="highlight"><pre><span></span><code>docker run --rm -d --name<span class="o">=</span>clickhouse-server <span class="se">\</span>
+           --ulimit <span class="nv">nofile</span><span class="o">=</span><span class="m">262144</span>:262144 <span class="se">\</span>
+           -p <span class="m">8123</span>:8123 -p <span class="m">9009</span>:9009 -p <span class="m">9090</span>:9000 <span class="se">\</span>
+           yandex/clickhouse-server:latest
+</code></pre></div>
+<p>复制临时容器内配置文件到宿主机</p>
+<div class="highlight"><pre><span></span><code>docker cp clickhouse-server:/etc/clickhouse-server/config.xml /opt/ck/conf/config.xml
+docker cp clickhouse-server:/etc/clickhouse-server/users.xml /opt/ck/conf/users.xml
+</code></pre></div>
+<p>关闭临时容器</p>
+<div class="highlight"><pre><span></span><code>docker stop clickhouse-server
+</code></pre></div>
+<p>修改clickhouse的用户密码需要在users.xml中配置，需要注意的是: 密码必须为加密过的形式, 否则会一直连不上。我们这次采用SHA256的方式加密。</p>
+<div class="highlight"><pre><span></span><code><span class="nv">PASSWORD</span><span class="o">=</span><span class="k">$(</span>base64 &lt; /dev/urandom <span class="p">|</span> head -c8<span class="k">)</span><span class="p">;</span> <span class="nb">echo</span> <span class="s2">&quot;你的密码&quot;</span><span class="p">;</span> <span class="nb">echo</span> -n <span class="s2">&quot;你的密码&quot;</span> <span class="p">|</span> sha256sum <span class="p">|</span> tr -d <span class="s1">&#39;-&#39;</span>
+</code></pre></div>
+<p>执行以上命令后会在命令行打印密码明文和密码密文, 如下:</p>
+<div class="highlight"><pre><span></span><code>A940922h
+dd2cef99d7122cd3e2455491f79b567400ce238b7eca309f73e089670df70eb6 
+</code></pre></div>
+<p><code>vim /opt/ck/conf/user.xml</code> 修改用户密码</p>
+<p>将<code>&lt;password&gt;&lt;/password&gt;</code> 修改为：</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;password_sha256_hex&gt;</span> 密码密文 <span class="nt">&lt;/password_sha256_hex&gt;</span>
+</code></pre></div>
+<h4 id="24-clickhouse">2.4 创建 Clickhouse 容器<a class="headerlink" href="#24-clickhouse" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>docker run -d --name<span class="o">=</span>clickhouse-server <span class="se">\</span>
+           -p <span class="m">8123</span>:8123 -p <span class="m">9009</span>:9009 -p <span class="m">9090</span>:9000 <span class="se">\</span>
+           --ulimit <span class="nv">nofile</span><span class="o">=</span><span class="m">262144</span>:262144 <span class="se">\</span>
+           -v /opt/ck/data:/var/lib/clickhouse:rw <span class="se">\</span>
+           -v /opt/ck/conf/config.xml:/etc/clickhouse-server/config.xml <span class="se">\</span>
+           -v /opt/ck/conf/users.xml:/etc/clickhouse-server/users.xml <span class="se">\</span>
+           -v /opt/ck/log:/var/log/clickhouse-server:rw <span class="se">\</span>
+           yandex/clickhouse-server:latest
+</code></pre></div>
+<h3 id="3">3. 连接测试<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>Clickhouse 的 Python 驱动库比较多，下面使用 <code>clickhouse-driver</code> 和 <code>clickhouse-sqlalchemy</code> 进行连接测试。</p>
+<h4 id="31">3.1 安装驱动<a class="headerlink" href="#31" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>pip install clickhouse-driver
+pip install clickhouse-sqlalchemy
+</code></pre></div>
+<h4 id="32">3.2 连接测试<a class="headerlink" href="#32" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">clickhouse_driver</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span>
+    <span class="n">host</span><span class="o">=</span><span class="s2">&quot;192.168.112.110&quot;</span><span class="p">,</span>
+    <span class="n">port</span><span class="o">=</span><span class="s2">&quot;9000&quot;</span><span class="p">,</span>
+    <span class="n">user</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">,</span>
+    <span class="n">password</span><span class="o">=</span><span class="s2">&quot;admin&quot;</span>
+<span class="p">)</span>
+
+<span class="n">sql</span> <span class="o">=</span> <span class="s2">&quot;show databases&quot;</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">create_engine</span><span class="p">,</span> <span class="n">Column</span><span class="p">,</span> <span class="n">MetaData</span><span class="p">,</span> <span class="n">literal</span>
+<span class="kn">from</span> <span class="nn">clickhouse_sqlalchemy</span> <span class="kn">import</span> <span class="n">Table</span><span class="p">,</span> <span class="n">make_session</span><span class="p">,</span> <span class="n">get_declarative_base</span><span class="p">,</span> <span class="n">types</span><span class="p">,</span> <span class="n">engines</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span><span class="p">,</span> <span class="n">timedelta</span>
+
+<span class="n">uri</span> <span class="o">=</span> <span class="s2">&quot;clickhouse://default:&lt;your_passwd&gt;@&lt;your_ip&gt;:8123/&lt;your_data_base&gt;&quot;</span>
+<span class="n">engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="n">uri</span><span class="p">)</span>
+<span class="n">session</span> <span class="o">=</span> <span class="n">make_session</span><span class="p">(</span><span class="n">engine</span><span class="p">)</span>
+<span class="n">metadata</span> <span class="o">=</span> <span class="n">MetaData</span><span class="p">(</span><span class="n">bind</span><span class="o">=</span><span class="n">engine</span><span class="p">)</span>
+<span class="n">Base</span> <span class="o">=</span> <span class="n">get_declarative_base</span><span class="p">(</span><span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">Rate</span><span class="p">(</span><span class="n">Base</span><span class="p">):</span>
+    <span class="n">day</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">types</span><span class="o">.</span><span class="n">Date</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">types</span><span class="o">.</span><span class="n">Int32</span><span class="p">)</span>
+    <span class="n">other_value</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span>
+        <span class="n">types</span><span class="o">.</span><span class="n">DateTime</span><span class="p">,</span>
+        <span class="n">clickhouse_codec</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;DoubleDelta&#39;</span><span class="p">,</span> <span class="s1">&#39;ZSTD&#39;</span><span class="p">),</span>
+    <span class="p">)</span>
+
+    <span class="n">__table_args__</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">engines</span><span class="o">.</span><span class="n">Memory</span><span class="p">(),</span>
+    <span class="p">)</span>
+
+
+<span class="n">another_table</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="s1">&#39;another_rate&#39;</span><span class="p">,</span> <span class="n">metadata</span><span class="p">,</span>
+                      <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;day&#39;</span><span class="p">,</span> <span class="n">types</span><span class="o">.</span><span class="n">Date</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+                      <span class="n">Column</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="n">types</span><span class="o">.</span><span class="n">Int32</span><span class="p">,</span> <span class="n">server_default</span><span class="o">=</span><span class="n">literal</span><span class="p">(</span><span class="mi">1</span><span class="p">)),</span>
+                      <span class="n">engines</span><span class="o">.</span><span class="n">Memory</span><span class="p">()</span>
+                      <span class="p">)</span>
+
+
+<span class="n">table</span> <span class="o">=</span> <span class="n">Rate</span><span class="o">.</span><span class="n">__table__</span>
+<span class="n">table</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+<span class="n">another_table</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+
+<span class="n">today</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+<span class="n">rates</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;day&#39;</span><span class="p">:</span> <span class="n">today</span> <span class="o">-</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="mi">200</span> <span class="o">-</span> <span class="n">i</span><span class="p">}</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
+
+<span class="n">session</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">table</span><span class="o">.</span><span class="n">insert</span><span class="p">(),</span> <span class="n">rates</span><span class="p">)</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">Rate</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">day</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">item</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+</code></pre></div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../Linux%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              Linux 系统启动过程
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              单例模式
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.4ea5477f.min.js"></script>
+      
+        <script src="../js/extra.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

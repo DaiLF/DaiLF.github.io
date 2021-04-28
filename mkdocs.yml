@@ -24,6 +24,8 @@ nav:
     - "WSL2数据迁移.md"
     - "WSL2安装docker.md"
     - "Linux系统启动过程.md"
+  - "Docker容器化":
+    - "DockerClickhouse.md"
   - "设计模式":
     - "单例模式.md"
   - "云哥教你学算法":
