@@ -16,7 +16,7 @@
     
     
       
-        <title>Python锁机制 - Zen Docs</title>
+        <title>线程中的锁机制 - Zen Docs</title>
       
     
     
@@ -60,6 +60,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -86,7 +91,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Python锁机制
+              线程中的锁机制
             
           </span>
         </div>
@@ -264,10 +269,49 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          线程中的锁机制
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Python锁机制
+        线程中的锁机制
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11-lock" class="md-nav__link">
+    1.1 互斥锁（Lock）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-rlock" class="md-nav__link">
+    1.2 可重入锁（RLock）
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -556,15 +600,109 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11-lock" class="md-nav__link">
+    1.1 互斥锁（Lock）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-rlock" class="md-nav__link">
+    1.2 可重入锁（RLock）
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
                 
-                  <h1>Python锁机制</h1>
-                
-                
+                <h1 id="_1">线程中的锁机制<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>当对一段代码加锁时，意味着在同一时间内只能有一个线程执行这段代码。</p>
+</blockquote>
+<p><strong>Python中的锁可以分为两种：</strong></p>
+<ul>
+<li>互斥锁</li>
+<li>可重入锁</li>
+</ul>
+<h2 id="11-lock">1.1 互斥锁（Lock）<a class="headerlink" href="#11-lock" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">threading</span>
+
+<span class="c1"># 创建全局锁对象</span>
+<span class="n">lock</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
+<span class="c1"># 获取锁，未获取到锁的话会阻塞程序，直到获取到锁</span>
+<span class="n">lock</span><span class="o">.</span><span class="n">acquire</span><span class="p">()</span>
+<span class="c1"># 释放锁</span>
+<span class="n">lock</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
+</code></pre></div>
+<p>😂 <code>lock.acquire()</code> 和 <code>lock.release()</code> 必须成对使用，不然会造成死锁。</p>
+<p>最佳使用方式是使用 <code>with</code> 上下文管理器：</p>
+<div class="highlight"><pre><span></span><code><span class="n">lock</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
+<span class="k">with</span> <span class="n">lock</span><span class="p">:</span>
+    <span class="c1"># code block</span>
+    <span class="k">pass</span>
+</code></pre></div>
+<h2 id="12-rlock">1.2 可重入锁（RLock）<a class="headerlink" href="#12-rlock" title="Permanent link">&para;</a></h2>
+<p>有时在同一个线程中，我们可能多次请求同一个资源，称为**嵌套锁**。</p>
+<p>如果直接使用互斥锁，代码如下，会造成死锁：</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">threading</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">lock</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
+    <span class="k">with</span> <span class="n">lock</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+            <span class="n">num</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">with</span> <span class="n">lock</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">main</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</code></pre></div>
+<p>上面的代码会直接造成死锁，因为第二次获取锁的时候，第一次获取的锁并没有释放，所以会一直在 <code>lock.acquire()</code> 处阻塞。</p>
+<p>为了解决这个问题，需要使用重入锁（RLock）来专门处理这个问题：</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">threding</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">rlock</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">RLock</span><span class="p">()</span>
+    <span class="k">with</span> <span class="n">rlock</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+            <span class="n">num</span> <span class="o">+=</span> <span class="mi">1</span> 
+            <span class="k">with</span> <span class="n">rlock</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">main</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</code></pre></div>
+<p>可重入锁只有在同一个线程中才可以重复获取锁，其他和互斥锁无异。</p>
                 
               
               
