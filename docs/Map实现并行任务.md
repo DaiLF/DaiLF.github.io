@@ -1,8 +1,8 @@
 ![](./img/The-Python-map-Function-Guide_Watermarked.webp)
-# Map 概述
+# 1. Map 概述
 > Python 的 `map()`是一个内置函数，允许您在不使用显式 `for` 循环的情况下处理和转换 `iterable` 中的所有项，这种技术通常称为映射。当您需要对迭代中的每个项应用转换函数并将它们转换为新的迭代时，`map()` 非常有用。`map()` 是 Python 中支持函数式编程风格的工具之一。  
 
-## Map 的小示例
+## 1.1 Map 的小示例
 
 ```python
 target = [1, 2, 3, 4, 5]
@@ -11,7 +11,7 @@ result = map(lambda x: x*x, target)
 # [1, 4, 9, 16, 25]
 ```
 
-## map()
+## 1.2 map()
 `map()` 函数接收两个参数，一个是函数 `f`，一个是迭代器（iterator），`map()` 函数在可迭代对象（iterable）的没一个元素上依次执行函数 `f`，并把结果作为新的迭代器返回，例如：
 
 ```python
@@ -36,7 +36,7 @@ for item in result:
     print(item)
 ```
 
-## 更强大的 map()
+## 1.3 更强大的 map()
 
 通常我们使用 `map()` 函数来批量执行一些操作，例如批量请求url，下面的代码是等价的。
 
@@ -58,7 +58,7 @@ for url in urls:
 
 `multiprocessing.dummy` 是 `multiprocessing` 模块的克隆版，唯一的区别是：`multiprocessing` 是基于**进程**工作，而 `multiprocessing.dummy` 子模块使用的是线程。
 
-### 小试牛刀
+### 1.3.1 小试牛刀
 
 ```python
 # 引入以下任意一行即可
@@ -82,7 +82,7 @@ pool = ThreadPool(4)  # 将池的大小设为4
 
 如果创建了过多的线程，`CPU` 会浪费大量的时间在线程切换上，而不是做有用的事情，所以需要设置好合适的线程数。
 
-### 示例
+### 1.3.2 示例
 
 ```python
 import urllib2 
@@ -115,10 +115,10 @@ pool.close()
 pool.join()
 ```
 
-### 总结
+### 1.3.3 总结
 
 `multiprocessing.dummy` 通过自动切换 `CPU` 密集型工作和 `IO` 密集工作并分配到各自的进程和线程以获得更快的速度，而无需手动的管理线程和进程，可以更加干净、可靠、简单的混合使用进程和线程。
 
-### 相关文章
+### 1.3.4 相关文章
 
 - [Python 解决多核处理器算力浪费的现象](https://www.jianshu.com/p/608ddd907357)

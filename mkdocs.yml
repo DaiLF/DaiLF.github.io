@@ -1,36 +1,38 @@
 site_name: Zen Docs
 site_author: Einsfat
 
-theme: 
+theme:
   name: material
   language: "zh"
-
 
 nav:
   - "概述": "index.md"
   - "格式化输出": "格式化输出.md"
   - "Map 的艺术": "Map实现并行任务.md"
   - "并发编程":
-    - "并发概述.md"
-    - "Python多线程.md"
-    - "Python锁机制.md"
-    - "Python多进程.md"
+      - "并发概述.md"
+      - "Python多线程.md"
+      - "Python锁机制.md"
+      - "Python多进程.md"
   - "异步I/O: asyncio":
-    - "asyncio上篇.md"
-    - "asyncio中篇.md"
-    - "asyncio下篇.md"
+      - "asyncio上篇.md"
+      - "asyncio中篇.md"
+      - "asyncio下篇.md"
   - "I/O多路复用": "事件轮询.md"
   - "Linux 杂谈":
-    - "WSL2数据迁移.md"
-    - "WSL2安装docker.md"
-    - "Linux系统启动过程.md"
+      - "WSL2数据迁移.md"
+      - "WSL2安装docker.md"
+      - "Linux系统启动过程.md"
   - "Docker容器化":
-    - "DockerClickhouse.md"
+      - "DockerClickhouse.md"
+  - "Markdown和Gitbook入门":
+      - "markdown快速入门.md"
+      - "gitbook快速入门.md"
   - "设计模式":
-    - "单例模式.md"
+      - "单例模式.md"
   - "云哥教你学算法":
-    - "关于云哥.md"
-    - "链表.md"
+      - "关于云哥.md"
+      - "链表.md"
   - "关于": "about.md"
 
 markdown_extensions:
@@ -66,8 +68,8 @@ markdown_extensions:
 
 extra:
   search:
-    language: 'jp'
+    language: "jp"
 
 extra_javascript:
-  - 'js/extra.js'
-  - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
+  - "js/extra.js"
+  - "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"

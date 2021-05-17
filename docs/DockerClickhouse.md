@@ -1,6 +1,5 @@
 ## Dcoker安装Clickhouse
 
-[TOC]
 
 ### 1. 安装 Docker
 
