@@ -1,5 +1,7 @@
 ## Dcoker安装Clickhouse
-
+<center>
+<img src="../img/src=http___pic4.zhimg.com_v2-8114926ad157d5522358595e7048ea38_1200x500.jpg&refer=http___pic4.zhimg.jpg">
+</center>
 
 ### 1. 安装 Docker
 
